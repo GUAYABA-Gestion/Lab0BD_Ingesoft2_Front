@@ -3,14 +3,13 @@ import { MouseEventHandler } from "react";
 export interface CustomButtonProps {
     title: string;
     containerStyles?: string;
-    handleClick?:
-    MouseEventHandler<HTMLButtonElement>;
+    handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export type FormProps = {
     submit: () => void;
     del: () => void;
-    update: () => void;
+    update: () => void
 };
 
 export interface Personas {

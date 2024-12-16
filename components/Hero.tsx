@@ -25,6 +25,7 @@ const Hero = () => {
     }
     };
 
+
     useEffect(() => {
         if (activeTab === "Persona") fetchPersonas();
     }, [activeTab]);
@@ -172,6 +173,32 @@ const Hero = () => {
 
     return (
         <div className="hero">
+            <div className="flex-1 pt-36 flex justify-center w-full">
+                <div className="w-full max-w-[1440px]">
+                    <h1 className="hero__title text-center">
+                        Implementación de la BD de Lab0
+                    </h1>
+                    
+                    {/* Tabs */}
+                    <div className="flex justify-center space-x-4 my-6">
+                        {["Persona", "Vivienda", "Propiedad Vivienda", "Negocio"].map((tab, idx) => (
+                            <button
+                                key={idx}
+                                //onClick={() => setActiveTab(tab)}
+                                className={`px-6 py-2 rounded-lg font-medium transition-colors ${activeTab === tab ? "bg-emerald-600 text-white" : "bg-gray-300 text-black"}`}
+                            >
+                                {tab}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Form and Table Content */}
+                    <div className="mx-auto">
+                        {renderForm()}
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

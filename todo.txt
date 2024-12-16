@@ -1,0 +1,4 @@
+Add dropdown to persona/anadir so foreign key contraint
+Add highlight to pestaña (Personas, Vivienda, Dueño Vivienda, Negocio) according to what page I'm in
+Add more clientside validation (ask others to confirm restraints if needed)
+Implement Edit/Delete
