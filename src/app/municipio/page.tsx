@@ -1,20 +1,17 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { CustomButton } from "../../../components";
 import { useState, useEffect } from "react";
 import { TablaMunicipios } from "../../../types";
 import { Tabs } from "../../../components";
 
 export default function Municipio() {
     const [municipios, setMunicipios] = useState<TablaMunicipios | null>(null);
-    const router = useRouter();
 
     // Fetch municipios from backend
     const fetchMunicipios = async () => {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}municipios`);
             if (!response.ok) throw new Error("Failed to fetch municipios.");
-            const data: TablaNegocios = await response.json();
+            const data: TablaMunicipios = await response.json();
             setMunicipios(data);
         } catch (error) {
             console.error("Error fetching municipios:", error);
