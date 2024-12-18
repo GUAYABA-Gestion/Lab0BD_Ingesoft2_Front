@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import CustomButton from "./CustomButton";
+import EditButton from "./EditButton";
 
 const current = new Date().toISOString().split("T")[0];
 
