@@ -5,7 +5,9 @@ import FormPersona from './FormPersona'
 import FormPersonaEdit from './FormPersonaEdit'
 import CampoCdf from './CampoCdf'
 import FormVivienda from './FormVivienda'
+import FormPropiedades from './FormPropiedades'
 import ConfirmationPopUp from './ConfirmationPopUp'
+import FormNegocio from './FormNegocio'
 
 
 export{
@@ -13,6 +15,8 @@ export{
     Tabs,
     FormPersona,
     FormVivienda,
+    FormPropiedades,
+    FormNegocio,
     CampoCdf,
     FormPersonaEdit,
     ConfirmationPopUp

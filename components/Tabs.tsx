@@ -1,6 +1,6 @@
 import Link from "next/link";
 const Tabs = () => {
-    const tabs = ["Persona", "Vivienda", "Propiedad Vivienda", "Negocio"];
+    const tabs = ["Persona", "Vivienda", "Propiedad Vivienda", "Negocio", "Municipio"];
   
     return (
       <div className="hero">
@@ -11,14 +11,20 @@ const Tabs = () => {
             </h1>
             {/* Tabs */}
             <div className="flex justify-center space-x-4 my-6">
-              {tabs.map((tab, idx) => (
-                <Link key={idx} href={`/${tab.toLowerCase().replace(' ', '-')}`}>
+            {tabs.map((tab, idx) => {
+              const route =
+                tab === "Propiedad Vivienda"
+                  ? "/propiedades"
+                  : `/${tab.toLowerCase().replace(" ", "_")}`;
+              return (
+                <Link key={idx} href={route}>
                   <button className="px-6 py-2 rounded-full font-medium bg-emerald-600 text-black">
                     {tab}
                   </button>
                 </Link>
-              ))}
-            </div>
+              );
+            })}
+          </div>
           </div>
         </div>
       </div>

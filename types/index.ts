@@ -43,3 +43,33 @@ export interface Viviendas {
 }
 
 export type TablaViviendas = Viviendas[];
+
+export interface Propiedades {
+    id: number;
+    vivienda_id: number;
+    propietario_id: number;
+}
+
+export type TablaPropiedades = Propiedades[];
+
+export interface Negocios {
+    nit: number;
+    propietario_id: number;
+    municipio_id: number;
+    tipo_negocio: string;
+    nombre: string;
+    direccion: string;
+    telefono: number;
+}
+
+export type TablaNegocios = Negocios[]
+
+export interface Municipios {
+    id: number;
+    nombre: string;
+    gobernador_id: number;
+    habitantes: number;
+    area: number;
+}
+
+export type TablaMunicipios = Municipios[]
