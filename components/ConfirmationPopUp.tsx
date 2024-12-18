@@ -19,9 +19,9 @@ const ConfirmationPopUp: React.FC<ConfirmationPopupProps> = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+      <div className="bg-black rounded-lg shadow-lg p-6 w-96">
         <h2 className="text-lg font-semibold mb-4">{title}</h2>
-        <p className="text-gray-700 mb-6">{message}</p>
+        <p className="text-white-700 mb-6">{message}</p>
         <div className="flex justify-end space-x-4">
           <button
             onClick={onClose}
