@@ -81,10 +81,10 @@ const FormPersonaEdit = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div className="flex space-x-4">
-                    <div className="flex-auto w-[8rem]">
+        <div className="flex items-center justify-center min-h-screen bg-black">
+            <form onSubmit={handleSubmit} className="w-full max-w-6xl p-8 bg-black shadow-lg rounded-lg">
+                <div className="grid grid-cols-3 gap-6">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">DNI:</label>
                         <input
                             type="number"
@@ -95,7 +95,7 @@ const FormPersonaEdit = () => {
                             required
                         />
                     </div>
-                    <div className="flex-auto w-[8rem]">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Residencia:</label>
                         <input
                             type="number"
@@ -105,7 +105,7 @@ const FormPersonaEdit = () => {
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
                         />
                     </div>
-                    <div className="flex-auto w-[8rem]">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Cabeza Familia:</label>
                         <input
                             type="number"
@@ -115,7 +115,7 @@ const FormPersonaEdit = () => {
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
                         />
                     </div>
-                    <div className="flex-auto">
+                    <div className="col-span-3">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Completo:</label>
                         <input
                             type="text"
@@ -126,7 +126,7 @@ const FormPersonaEdit = () => {
                             required
                         />
                     </div>
-                    <div className="flex-auto">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha Nacimiento:</label>
                         <input
                             type="date"
@@ -137,7 +137,7 @@ const FormPersonaEdit = () => {
                             max={current}
                         />
                     </div>
-                    <div className="flex-auto">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sexo:</label>
                         <select
                             name="sexo"
@@ -150,7 +150,7 @@ const FormPersonaEdit = () => {
                             <option value="M">Hombre</option>
                         </select>
                     </div>
-                    <div className="flex-auto">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</label>
                         <input
                             type="email"
@@ -161,7 +161,7 @@ const FormPersonaEdit = () => {
                             required
                         />
                     </div>
-                    <div className="flex-auto w-[7.5rem]">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono:</label>
                         <input
                             type="number"
@@ -172,7 +172,7 @@ const FormPersonaEdit = () => {
                             required
                         />
                     </div>
-                    <div className="flex-auto w-[7.5rem]">
+                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Célular:</label>
                         <input
                             type="number"
@@ -199,19 +199,18 @@ const FormPersonaEdit = () => {
                             setIsPopupOpen(true);
                         }}
                     />
-                    
                 </div>
-                
             </form>
             <ConfirmationPopUp
-                        isOpen={isPopupOpen}
-                        onClose={() => setIsPopupOpen(false)}
-                        onConfirm={handleDelete}
-                        title="Borrar entrada?"
-                        message="¿Está seguro que desea eliminar esta entrada?"
-                    />
+                isOpen={isPopupOpen}
+                onClose={() => setIsPopupOpen(false)}
+                onConfirm={handleDelete}
+                title="Borrar entrada?"
+                message="¿Está seguro que desea eliminar esta entrada?"
+            />
         </div>
     );
+    
 };
 
 export default FormPersonaEdit;
