@@ -13,7 +13,7 @@ export type FormProps = {
 };
 
 export interface Personas {
-    id: number;
+    dni: number;
     residencia_id: number;
     cdf_id: number | null
     nombre_completo: string;
@@ -25,3 +25,21 @@ export interface Personas {
   };
 
 export type TablaPersonas = Personas[];
+
+export interface Cdf {
+    cdf_id: number;
+    persona_id: number;
+};
+
+export interface Viviendas {
+    id: number;
+    municipio_id: number;
+    tipo_vivienda: string;
+    direccion: string;
+    pisos: number;
+    tamano: number;
+    estrato: number;
+    avaluo: number;
+}
+
+export type TablaViviendas = Viviendas[];

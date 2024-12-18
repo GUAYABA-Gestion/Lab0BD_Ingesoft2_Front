@@ -36,7 +36,7 @@ export default function Persona() {
                   <tr className="bg-gray-200">
                     <th className="border px-4 py-2 dark:bg-gray-700">ID</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">ID Residencia</th>
-                    <th className="border px-4 py-2 dark:bg-gray-700">Cédula Cabeza Familia</th>
+                    <th className="border px-4 py-2 dark:bg-gray-700">CIF (Clickeable)</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">Nombre Completo</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">Fecha de Nacimiento</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">Sexo</th>
@@ -47,10 +47,15 @@ export default function Persona() {
                 </thead>
                 <tbody>
                   {personas.map((persona) => (
-                    <tr key={persona.id}>
-                      <td className="border px-4 py-2">{persona.id}</td>
+                    <tr key={persona.dni}>
+                      <td className="border px-4 py-2">{persona.dni}</td>
                       <td className="border px-4 py-2">{persona.residencia_id}</td>
-                      <td className="border px-4 py-2">{persona.cdf_id}</td>
+                      <td 
+                                className="border px-4 py-2 text-blue-600 cursor-pointer underline"
+                                onClick={() => router.push(`/cdf?cdf_id=${persona.cdf_id}`)}
+                            >
+                              {persona.cdf_id}
+                      </td>
                       <td className="border px-4 py-2">{persona.nombre_completo}</td>
                       <td className="border px-4 py-2">{persona.fecha_nacimiento}</td>
                       <td className="border px-4 py-2">{persona.sexo}</td>
