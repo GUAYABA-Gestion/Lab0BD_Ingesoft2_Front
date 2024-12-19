@@ -45,7 +45,12 @@ export default function Vivienda() {
                   {viviendas.map((vivienda) => (
                     <tr key={vivienda.id}>
                       <td className="border px-4 py-2">{vivienda.id}</td>
-                      <td className="border px-4 py-2">{vivienda.municipio_id}</td>
+                      <td
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/ubicacion?ubicacion_id=${vivienda.municipio_id}`)}
+                            >
+                                    {vivienda.municipio_id}
+                            </td>
                       <td className="border px-4 py-2">{vivienda.tipo_vivienda}</td>
                       <td className="border px-4 py-2">{vivienda.direccion}</td>
                       <td className="border px-4 py-2">{vivienda.pisos}</td>

@@ -13,17 +13,19 @@
     --foreground: #ededed;
   }
 }
-
+td.selectable{
+  color: #2563eb !important; /* Azul de Tailwind */
+  text-decoration: underline !important; /* Subrayado */
+  cursor: pointer !important; /* Mostrar como enlace */
+}
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* START: Hero styles */
-.hero {
-  @apply flex xl:flex-row gap-5 relative z-0 max-w-[90vw] mx-auto;
-}
+
+
 
 .hero__title {
   @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold justify-center;
@@ -32,3 +34,4 @@ body {
 .custom-btn {
   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
 }
+

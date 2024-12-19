@@ -37,7 +37,7 @@ export default function Persona() {
                     <tr className="bg-gray-200">
                         <th className="border px-4 py-2 dark:bg-gray-700">ID</th>
                         <th className="border px-4 py-2 dark:bg-gray-700">ID Residencia</th>
-                        <th className="border px-4 py-2 dark:bg-gray-700">CIF (Clickeable)</th>
+                        <th className="border px-4 py-2 dark:bg-gray-700">CIF</th>
                         <th className="border px-4 py-2 dark:bg-gray-700">Nombre Completo</th>
                         <th className="border px-4 py-2 dark:bg-gray-700">Fecha de Nacimiento</th>
                         <th className="border px-4 py-2 dark:bg-gray-700">Sexo</th>
@@ -51,12 +51,17 @@ export default function Persona() {
                     {personas.map((persona) => (
                         <tr key={persona.dni}>
                             <td className="border px-4 py-2">{persona.dni}</td>
-                            <td className="border px-4 py-2">{persona.residencia_id}</td>
                             <td
-                                className="border px-4 py-2 text-blue-600 cursor-pointer underline"
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/residencia?residencia_id=${persona.residencia_id}`)}
+                            >
+                                    {persona.residencia_id}
+                            </td>
+                            <td
+                                className="selectable border px-4 py-2 "
                                 onClick={() => router.push(`/cdf?cdf_id=${persona.cdf_id}`)}
                             >
-                                {persona.cdf_id}
+                                    {persona.cdf_id}
                             </td>
                             <td className="border px-4 py-2">{persona.nombre_completo}</td>
                             <td className="border px-4 py-2">{persona.fecha_nacimiento}</td>

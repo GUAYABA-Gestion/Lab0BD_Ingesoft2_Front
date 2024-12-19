@@ -38,8 +38,18 @@ export default function Propiedades() {
                 <tbody>
                   {propiedades.map((propiedad) => (
                     <tr key={propiedad.id}>
-                      <td className="border px-4 py-2">{propiedad.vivienda_id}</td>
-                      <td className="border px-4 py-2">{propiedad.propietario_id}</td>
+                      <td
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/residencia?residencia_id=${propiedad.vivienda_id}`)}
+                            >
+                                    {propiedad.vivienda_id}
+                      </td>
+                      <td
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/dueno?dueno_id=${propiedad.propietario_id}`)}
+                            >
+                                    {propiedad.propietario_id}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

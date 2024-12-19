@@ -48,8 +48,18 @@ export default function Negocio() {
                     {negocios.map((negocio) => (
                         <tr key={negocio.nit}>
                             <td className="border px-4 py-2">{negocio.nit}</td>
-                            <td className="border px-4 py-2">{negocio.propietario_id}</td>
-                            <td className="border px-4 py-2">{negocio.municipio_id}</td>
+                            <td
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/dueno?dueno_id=${negocio.propietario_id}`)}
+                            >
+                                    {negocio.propietario_id}
+                            </td>
+                            <td
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/ubicacion?ubicacion_id=${negocio.municipio_id}`)}
+                            >
+                                    {negocio.municipio_id}
+                            </td>
                             <td className="border px-4 py-2">{negocio.tipo_negocio}</td>
                             <td className="border px-4 py-2">{negocio.nombre}</td>
                             <td className="border px-4 py-2">{negocio.direccion}</td>

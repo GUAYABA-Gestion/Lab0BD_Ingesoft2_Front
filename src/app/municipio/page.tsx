@@ -1,10 +1,12 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { TablaMunicipios } from "../../../types";
 import { Tabs } from "../../../components";
 
 export default function Municipio() {
     const [municipios, setMunicipios] = useState<TablaMunicipios | null>(null);
+    const router = useRouter();
 
     // Fetch municipios from backend
     const fetchMunicipios = async () => {
@@ -44,7 +46,12 @@ export default function Municipio() {
                         <tr key={municipio.id}>
                             <td className="border px-4 py-2">{municipio.id}</td>
                             <td className="border px-4 py-2">{municipio.nombre}</td>
-                            <td className="border px-4 py-2">{municipio.gobernador_id}</td>
+                            <td
+                                className="selectable border px-4 py-2 "
+                                onClick={() => router.push(`/dueno?dueno_id=${municipio.gobernador_id}`)}
+                            >
+                                    {municipio.gobernador_id}
+                            </td>
                             <td className="border px-4 py-2">{municipio.habitantes}</td>
                             <td className="border px-4 py-2">{municipio.area}</td>
                         </tr>

@@ -4,6 +4,9 @@ import Tabs from './Tabs'
 import FormPersona from './FormPersona'
 import FormPersonaEdit from './FormPersonaEdit'
 import CampoCdf from './CampoCdf'
+import CampoResidencia from './CampoResidencia'
+import CampoDueno from './CampoDueno'
+import CampoUbicacion from './CampoUbicacion'
 import FormVivienda from './FormVivienda'
 import FormPropiedades from './FormPropiedades'
 import ConfirmationPopUp from './ConfirmationPopUp'
@@ -18,6 +21,9 @@ export{
     FormPropiedades,
     FormNegocio,
     CampoCdf,
+    CampoResidencia,
+    CampoDueno,
+    CampoUbicacion,
     FormPersonaEdit,
     ConfirmationPopUp
 }
