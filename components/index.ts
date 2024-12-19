@@ -8,9 +8,12 @@ import CampoResidencia from './CampoResidencia'
 import CampoDueno from './CampoDueno'
 import CampoUbicacion from './CampoUbicacion'
 import FormVivienda from './FormVivienda'
+import FormViviendaEdit from './FormViviendaEdit'
 import FormPropiedades from './FormPropiedades'
+import FormPropiedadesEdit from './FormPropiedadesEdit'
 import ConfirmationPopUp from './ConfirmationPopUp'
 import FormNegocio from './FormNegocio'
+import FormNegocioEdit from './FormNegocioEdit'
 
 
 export{
@@ -20,10 +23,13 @@ export{
     FormVivienda,
     FormPropiedades,
     FormNegocio,
+    FormNegocioEdit,
     CampoCdf,
     CampoResidencia,
     CampoDueno,
     CampoUbicacion,
     FormPersonaEdit,
+    FormViviendaEdit,
+    FormPropiedadesEdit,
     ConfirmationPopUp
 }

@@ -87,7 +87,7 @@ export default function Persona() {
         router.push("/persona/anadir");
     };
 
-    const handleEditClick = (dni: string) => {
+    const handleEditClick = (dni: number) => {
         router.push(`/persona/edit/?persona_id=${dni}`);
     };
 

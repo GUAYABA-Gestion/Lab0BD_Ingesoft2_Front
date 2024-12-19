@@ -15,6 +15,7 @@ export default function Negocio() {
             const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}negocios`);
             if (!response.ok) throw new Error("Failed to fetch negocios");
             const data: TablaNegocios = await response.json();
+            //console.log(data);
             setNegocios(data);
         } catch (error) {
             console.error("Error fetching negocios:", error);
@@ -42,6 +43,7 @@ export default function Negocio() {
                         <th className="border px-4 py-2 dark:bg-gray-700">Nombre:</th>
                         <th className="border px-4 py-2 dark:bg-gray-700">Direccion:</th>
                         <th className="border px-4 py-2 dark:bg-gray-700">Teléfono:</th>
+                        <th className="border px-4 py-2 dark:bg-gray-700">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +66,13 @@ export default function Negocio() {
                             <td className="border px-4 py-2">{negocio.nombre}</td>
                             <td className="border px-4 py-2">{negocio.direccion}</td>
                             <td className="border px-4 py-2">{negocio.telefono}</td>
+                            <td className="border px-4 py-2">
+                                <CustomButton
+                                    title="Edit"
+                                    containerStyles="bg-emerald-600 text-black rounded-full"
+                                    handleClick={() => handleEditClick(negocio.nit)}
+                                />
+                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -73,6 +82,9 @@ export default function Negocio() {
 
     const handleAddClick = () => {
         router.push("/negocio/anadir");
+    };
+    const handleEditClick = (nid: string) => {
+        router.push(`/negocio/edit/?negocio_nit=${nid}`);
     };
 
 

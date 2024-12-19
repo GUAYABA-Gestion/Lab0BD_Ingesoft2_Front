@@ -39,6 +39,7 @@ export default function Vivienda() {
                     <th className="border px-4 py-2 dark:bg-gray-700">Tamaño</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">Estrato</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">Avaluo</th>
+                    <th className="border px-4 py-2 dark:bg-gray-700">Editar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,6 +58,13 @@ export default function Vivienda() {
                       <td className="border px-4 py-2">{vivienda.tamano}</td>
                       <td className="border px-4 py-2">{vivienda.estrato}</td>
                       <td className="border px-4 py-2">{vivienda.avaluo}</td>
+                      <td className="border px-4 py-2">
+                                <CustomButton
+                                    title="Edit"
+                                    containerStyles="bg-emerald-600 text-black rounded-full"
+                                    handleClick={() => handleEditClick(vivienda.id)}
+                                />
+                            </td>
                     </tr>
                   ))}
                 </tbody>
@@ -68,6 +76,9 @@ export default function Vivienda() {
     const handleAddClick = () => {
         router.push("/vivienda/anadir");
     };
+    const handleEditClick = (vid: number) => {
+      router.push(`/vivienda/edit/?vivienda_id=${vid}`);
+  };
     return( 
         //Contrucción de la página como tal
         <div>   

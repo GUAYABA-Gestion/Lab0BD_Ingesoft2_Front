@@ -33,6 +33,7 @@ export default function Propiedades() {
                   <tr className="bg-gray-200">
                     <th className="border px-4 py-2 dark:bg-gray-700">ID Vivienda:</th>
                     <th className="border px-4 py-2 dark:bg-gray-700">ID Propietario:</th>
+                    <th className="border px-4 py-2 dark:bg-gray-700">Editar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -50,6 +51,13 @@ export default function Propiedades() {
                             >
                                     {propiedad.propietario_id}
                       </td>
+                      <td className="border px-4 py-2">
+                                <CustomButton
+                                    title="Edit"
+                                    containerStyles="bg-emerald-600 text-black rounded-full"
+                                    handleClick={() => handleEditClick(propiedad.id)}
+                                />
+                            </td>
                     </tr>
                   ))}
                 </tbody>
@@ -61,6 +69,9 @@ export default function Propiedades() {
     const handleAddClick = () => {
         router.push("/propiedades/anadir");
     };
+    const handleEditClick = (pid: number) => {
+      router.push(`/propiedades/edit/?propiedad_id=${pid}`);
+  };
     return( 
         //Contrucción de la página como tal
         <div>   
