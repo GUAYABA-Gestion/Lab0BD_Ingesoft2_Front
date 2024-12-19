@@ -99,7 +99,7 @@ const FormPropiedadesEdit = () => {
             });
 
             if (!response.ok) throw new Error("Error updating propiedad");
-            router.push("/propiedad");
+            router.push("/propiedades");
         } catch (error) {
             console.error("Error updating propiedad:", error);
         }
