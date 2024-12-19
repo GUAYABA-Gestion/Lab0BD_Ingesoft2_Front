@@ -1,10 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import CustomButton from "./CustomButton";
 
 const FormNegocio= () => {
     const router = useRouter();
+    const [flashMessage, setFlashMessage] = useState<string | null>(null); // Estado para el mensaje flash
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -24,11 +26,18 @@ const FormNegocio= () => {
           }
           router.push("/negocio"); // Redirige a /negocio si tiene éxito
         } catch (error) {
+          setFlashMessage("Hubo un error al enviar los datos. Por favor, verifica la información.");
           console.error();
         }
       };
         return(
         <div>
+            {/* Mostrar el mensaje flash si existe */}
+            {flashMessage && (
+                <div className="bg-red-500 text-white p-4 rounded-lg mb-4">
+                    {flashMessage}
+                </div>
+            )}
             <form onSubmit={handleSubmit}>
                 <div className="flex space-x-4">
                     <div className="flex-auto w-[8rem]">
