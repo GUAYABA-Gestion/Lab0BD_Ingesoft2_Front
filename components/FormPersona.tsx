@@ -18,7 +18,7 @@ const FormPersona = () => {
             // Convertir campos vacíos en null para evitar errores de BD
         const sanitizedData = {
         ...data,
-        id: data.id,
+        dni: data.dni,
         residencia_id: data.residencia_id,
         cdf_id: data.cdf_id || null,
         nombre_completo: data.nombrecompleto,
