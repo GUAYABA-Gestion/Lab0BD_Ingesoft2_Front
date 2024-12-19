@@ -21,7 +21,7 @@ const FormPersona = () => {
         dni: data.dni,
         residencia_id: data.residencia_id,
         cdf_id: data.cdf_id || null,
-        nombre_completo: data.nombre_completo,
+        nombre_completo: data.nombre_completo || "test",
         telefono: data.telefono,
         celular: data.celular,
         };
