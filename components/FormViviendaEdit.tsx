@@ -4,17 +4,14 @@ import { useRouter } from "next/navigation";
 import CustomButton from "./CustomButton";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Municipios, Personas, Viviendas } from "../types";
+import { Viviendas } from "../types";
 import ConfirmationPopUp from "./ConfirmationPopUp";
-
-const current = new Date().toISOString().split("T")[0];
 
 const FormViviendaEdit = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const vId = searchParams.get("vivienda_id");
     const [vivienda, setViviendas] = useState<Partial<Viviendas>>({});
-    const [municipio, setMunicipios] = useState<Partial<Municipios>>({});
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const handleDelete = async () => {
         try {
