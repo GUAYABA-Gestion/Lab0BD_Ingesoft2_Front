@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { CampoDueno } from "../../../components";
 
 const DuenoPage = () => {
@@ -35,12 +35,15 @@ const DuenoPage = () => {
     return (
         <div className="container mx-auto mt-10">
             <h1 className="text-2xl font-bold mb-4">Información de Municipio:</h1>
-            {DuenoData ? (
-                <CampoDueno dni={DuenoData.dni} residencia_id={DuenoData.residencia_id} cdf_id={DuenoData.cdf_id} nombre_completo={DuenoData.nombre_completo} fecha_nacimiento={DuenoData.fecha_nacimiento} sexo={DuenoData.sexo} email={DuenoData.email} telefono={DuenoData.telefono} celular={DuenoData.celular}/>
-            ) : (
-                <p className="text-gray-500">Cargando datos...</p>
-            )}
+            <Suspense fallback={<p className="text-gray-500">Cargando datos...</p>}>
+                {DuenoData ? (
+                    <CampoDueno dni={DuenoData.dni} residencia_id={DuenoData.residencia_id} cdf_id={DuenoData.cdf_id} nombre_completo={DuenoData.nombre_completo} fecha_nacimiento={DuenoData.fecha_nacimiento} sexo={DuenoData.sexo} email={DuenoData.email} telefono={DuenoData.telefono} celular={DuenoData.celular}/>
+                ) : (
+                    <p className="text-gray-500">Cargando datos...</p>
+                )}
+            </Suspense>
         </div>
+        
     );
 };
 

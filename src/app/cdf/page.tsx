@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { CampoCdf } from "../../../components";
 
 const CdfPage = () => {
@@ -35,11 +35,13 @@ const CdfPage = () => {
     return (
         <div className="container mx-auto mt-10">
             <h1 className="text-2xl font-bold mb-4">Información de CIF</h1>
-            {cdfData ? (
-                <CampoCdf cdf_id={cdfData.cdf_id} persona_id={cdfData.persona_id} />
-            ) : (
-                <p className="text-gray-500">Cargando datos...</p>
-            )}
+            <Suspense fallback={<p className="text-gray-500">Cargando datos...</p>}>
+                {cdfData ? (
+                    <CampoCdf cdf_id={cdfData.cdf_id} persona_id={cdfData.persona_id} />
+                ) : (
+                    <p className="text-gray-500">Cargando datos...</p>
+                )}
+            </Suspense>
         </div>
     );
 };
