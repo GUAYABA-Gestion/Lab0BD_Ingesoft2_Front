@@ -58,7 +58,7 @@ const FormPersona = () => {
                         <label className="block mb-2 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">ID:</label>
                         <input type="text" 
                         id="id-input"
-                        name="id" 
+                        name="dni" 
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600" 
                         placeholder="##########" 
                         required />
