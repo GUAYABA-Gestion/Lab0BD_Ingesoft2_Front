@@ -186,6 +186,7 @@ const FormNegocioEdit = () => {
                             onChange={(e) => setNegocios({ ...negocio, telefono: Number(e.target.value) })}
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
                             maxLength={10}
+                            minLength={10}
                             required
                         />
                     </div>
