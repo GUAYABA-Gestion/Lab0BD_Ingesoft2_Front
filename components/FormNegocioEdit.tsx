@@ -114,25 +114,12 @@ const FormNegocioEdit = () => {
             <form onSubmit={handleSubmit} className="w-full max-w-6xl p-8 bg-black shadow-lg rounded-lg">
                 <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-1">
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID:</label>
-                        <input
-                            type="number"
-                            name="id"
-                            value={""}
-                            //onChange={(e) => setNegocios({ ...negocio, dni: Number(e.target.value) })}
-                            className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
-                            required
-                            disabled
-
-                        />
-                    </div>
-                    <div className="col-span-1">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIT:</label>
                         <input
-                            type="number"
+                            type="text"
                             name="NIT"
                             value={negocio.nit || ""}
-                            onChange={(e) => setNegocios({ ...negocio, nit: Number(e.target.value) })}
+                            onChange={(e) => setNegocios({ ...negocio, nit:e.target.value })}
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
                         />
                     </div>
