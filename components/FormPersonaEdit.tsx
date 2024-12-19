@@ -92,6 +92,7 @@ const FormPersonaEdit = () => {
                             value={persona.dni || ""}
                             onChange={(e) => setPersona({ ...persona, dni: Number(e.target.value) })}
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
+                            disabled
                             required
                         />
                     </div>
