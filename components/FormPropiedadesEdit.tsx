@@ -99,7 +99,7 @@ const FormPropiedadesEdit = () => {
             });
 
             if (!response.ok) throw new Error("Error updating propiedad");
-            router.push("/propiedad");
+            router.push("/propiedades");
         } catch (error) {
             console.error("Error updating propiedad:", error);
         }
@@ -148,7 +148,7 @@ const FormPropiedadesEdit = () => {
                     <CustomButton
                         title="Cancelar"
                         containerStyles="bg-gray-600 text-white rounded-lg px-6 py-2"
-                        handleClick={() => router.back()}
+                        handleClick={() => router.push("/propiedades")}
                     />
                     <CustomButton
                         title="Borrar"
