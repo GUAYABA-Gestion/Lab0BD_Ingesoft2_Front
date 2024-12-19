@@ -53,7 +53,6 @@ export interface Propiedades {
 export type TablaPropiedades = Propiedades[];
 
 export interface Negocios {
-    id:number;
     nit: string;
     propietario_id: number;
     municipio_id: number;

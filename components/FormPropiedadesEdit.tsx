@@ -119,7 +119,8 @@ const FormPropiedadesEdit = () => {
                         id="propiedad_id-input" 
                         name="propiedad_id" 
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600"
-                        value={propiedad.id || ""}  
+                        value={propiedad.id || ""}
+                        onChange={(e) => setPropiedades({ ...propiedad, id: Number(e.target.value) })} 
                         required 
                         disabled
                         />
@@ -130,7 +131,8 @@ const FormPropiedadesEdit = () => {
                         id="vivienda_id-input" 
                         name="vivienda_id" 
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600" 
-                        value={propiedad.vivienda_id || ""} 
+                        value={propiedad.vivienda_id || ""}
+                        onChange={(e) => setPropiedades({ ...propiedad, vivienda_id: Number(e.target.value) })} 
                         required />
                     </div>
                     <div className="flex-auto w-[8rem]">
@@ -139,7 +141,8 @@ const FormPropiedadesEdit = () => {
                         id="propietario_id-input" 
                         name="propietario_id"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600" 
-                        value={propiedad.propietario_id || ""} 
+                        value={propiedad.propietario_id || ""}
+                        onChange={(e) => setPropiedades({ ...propiedad, propietario_id: Number(e.target.value) })}  
                         required />
                     </div>
                 </div>
@@ -148,7 +151,7 @@ const FormPropiedadesEdit = () => {
                     <CustomButton
                         title="Cancelar"
                         containerStyles="bg-gray-600 text-white rounded-lg px-6 py-2"
-                        handleClick={() => router.back()}
+                        handleClick={() => router.push("/propiedades")}
                     />
                     <CustomButton
                         title="Borrar"

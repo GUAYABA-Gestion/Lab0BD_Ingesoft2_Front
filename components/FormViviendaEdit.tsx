@@ -4,17 +4,14 @@ import { useRouter } from "next/navigation";
 import CustomButton from "./CustomButton";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Municipios, Personas, Viviendas } from "../types";
+import { Viviendas } from "../types";
 import ConfirmationPopUp from "./ConfirmationPopUp";
-
-const current = new Date().toISOString().split("T")[0];
 
 const FormViviendaEdit = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const vId = searchParams.get("vivienda_id");
     const [vivienda, setViviendas] = useState<Partial<Viviendas>>({});
-    const [municipio, setMunicipios] = useState<Partial<Municipios>>({});
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const handleDelete = async () => {
         try {
@@ -198,11 +195,11 @@ const FormViviendaEdit = () => {
                             value={vivienda.pisos || ""}
                             onChange={(e) => setViviendas({ ...vivienda, pisos: Number(e.target.value) })}
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
-                            //max={current}
+                            max={50}
                         />
                     </div>
                     <div className="col-span-1">
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tamaño:</label>
+                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tamaño (KM^2):</label>
                         <input
                             type="number"
                             name="tamano"
@@ -243,6 +240,7 @@ const FormViviendaEdit = () => {
                             onChange={(e) => setViviendas({ ...vivienda, avaluo: Number(e.target.value)})}
                             className="bg-gray-50 border rounded-lg w-full p-2.5 dark:bg-gray-700 dark:border-gray-600"
                             required
+                            
                         />
                     </div>
                 </div>
