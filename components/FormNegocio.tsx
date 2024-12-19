@@ -78,7 +78,7 @@ const FormNegocio= () => {
                     </div>
                     <div className="flex-auto">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre:</label>
-                        <input type="number" 
+                        <input type="text" 
                         id="nombre-input"
                         name="nombre" 
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
@@ -100,7 +100,9 @@ const FormNegocio= () => {
                         id="telefono-input" 
                         name="telefono"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600" 
-                        placeholder="##########" 
+                        placeholder="##########"
+                        maxLength={10} 
+                        minLength={10} 
                         required />
                     </div>
                 </div>
